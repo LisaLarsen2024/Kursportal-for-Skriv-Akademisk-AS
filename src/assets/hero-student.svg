@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380" fill="none">
+  <!-- Desk -->
+  <rect x="40" y="280" width="320" height="18" rx="6" fill="#1B4D5C" opacity="0.18"/>
+  <!-- Laptop base -->
+  <rect x="100" y="258" width="200" height="28" rx="6" fill="#1B4D5C" opacity="0.55"/>
+  <!-- Laptop screen -->
+  <rect x="108" y="178" width="184" height="90" rx="8" fill="#1B4D5C"/>
+  <rect x="116" y="186" width="168" height="76" rx="4" fill="#1e6878"/>
+  <!-- Screen content lines -->
+  <rect x="126" y="196" width="80" height="6" rx="3" fill="white" opacity="0.55"/>
+  <rect x="126" y="208" width="120" height="4" rx="2" fill="white" opacity="0.3"/>
+  <rect x="126" y="218" width="100" height="4" rx="2" fill="white" opacity="0.3"/>
+  <rect x="126" y="228" width="60" height="4" rx="2" fill="white" opacity="0.2"/>
+  <!-- Hinge -->
+  <rect x="108" y="266" width="184" height="5" rx="2.5" fill="#163e4a"/>
+  <!-- Chair back -->
+  <rect x="168" y="300" width="64" height="60" rx="10" fill="#D4764E" opacity="0.22"/>
+  <!-- Body / torso -->
+  <ellipse cx="200" cy="238" rx="34" ry="20" fill="#D4764E" opacity="0.85"/>
+  <!-- Arms -->
+  <path d="M168 242 Q148 258 152 270" stroke="#D4764E" stroke-width="14" stroke-linecap="round" opacity="0.85"/>
+  <path d="M232 242 Q252 258 248 270" stroke="#D4764E" stroke-width="14" stroke-linecap="round" opacity="0.85"/>
+  <!-- Hands on keyboard -->
+  <ellipse cx="158" cy="272" rx="12" ry="7" fill="#f4c5ae"/>
+  <ellipse cx="242" cy="272" rx="12" ry="7" fill="#f4c5ae"/>
+  <!-- Neck -->
+  <rect x="192" y="196" width="16" height="18" rx="8" fill="#f4c5ae"/>
+  <!-- Head -->
+  <ellipse cx="200" cy="180" rx="30" ry="34" fill="#f4c5ae"/>
+  <!-- Hair -->
+  <path d="M170 175 Q172 138 200 136 Q228 138 230 175 Q222 158 200 156 Q178 158 170 175Z" fill="#2e1a0e"/>
+  <!-- Eyes -->
+  <ellipse cx="190" cy="178" rx="4" ry="4.5" fill="white"/>
+  <ellipse cx="210" cy="178" rx="4" ry="4.5" fill="white"/>
+  <ellipse cx="191" cy="179" rx="2.5" ry="3" fill="#1B4D5C"/>
+  <ellipse cx="211" cy="179" rx="2.5" ry="3" fill="#1B4D5C"/>
+  <!-- Smile -->
+  <path d="M192 192 Q200 200 208 192" stroke="#c97a6a" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Thought bubble -->
+  <circle cx="258" cy="128" r="26" fill="white" opacity="0.92"/>
+  <circle cx="240" cy="152" r="8" fill="white" opacity="0.7"/>
+  <circle cx="232" cy="164" r="5" fill="white" opacity="0.5"/>
+  <text x="258" y="134" text-anchor="middle" font-size="20" fill="#D4764E">A</text>
+  <!-- Coffee mug -->
+  <rect x="62" y="256" width="26" height="22" rx="4" fill="white" opacity="0.9"/>
+  <path d="M88 263 Q96 263 96 270 Q96 277 88 277" stroke="#1B4D5C" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <!-- Steam -->
+  <path d="M70 252 Q73 245 70 240" stroke="#1B4D5C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.35"/>
+  <path d="M78 252 Q81 243 78 237" stroke="#1B4D5C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.35"/>
+  <!-- Book -->
+  <rect x="296" y="250" width="44" height="28" rx="3" fill="#D4764E" opacity="0.7"/>
+  <line x1="318" y1="250" x2="318" y2="278" stroke="white" stroke-width="1.5" opacity="0.5"/>
+</svg>

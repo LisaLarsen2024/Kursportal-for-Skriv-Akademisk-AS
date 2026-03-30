@@ -1,11 +1,48 @@
 <!doctype html>
-<html lang="nb">
+<html lang="nb" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skriv Akademisk | Kursportal</title>
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <meta name="theme-color" content="#0F0F14" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Skriv Akademisk" />
+    <meta name="description" content="Videokurs i akademisk skriving, norsk eksamen VGS og skriving for ungdomsskolen. Laget av Lisa — lektor med tre mastergrader. Engangsbetaling, tilgang for alltid." />
+    <meta name="author" content="Skriv Akademisk AS" />
+    <meta name="copyright" content="© 2026 Skriv Akademisk AS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kurs.skrivakademisk.no/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Skriv Akademisk" />
+    <meta property="og:url" content="https://kurs.skrivakademisk.no/" />
+    <meta property="og:title" content="Skriv Akademisk | Videokurs i akademisk skriving" />
+    <meta property="og:description" content="Videokurs i akademisk skriving, norsk eksamen VGS og skriving for ungdomsskolen. Laget av Lisa — lektor med tre mastergrader." />
+    <meta property="og:locale" content="nb_NO" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Skriv Akademisk | Videokurs i akademisk skriving" />
+    <meta name="twitter:description" content="Videokurs i akademisk skriving, norsk eksamen VGS og skriving for ungdomsskolen. Laget av Lisa — lektor med tre mastergrader." />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('sa-theme');
+          var theme = stored === 'light' ? 'light' : 'dark';
+          var root = document.documentElement;
+          root.classList.remove('dark', 'light');
+          root.classList.add(theme);
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="bg-brand-cream">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

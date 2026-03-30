@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /norsk/dashboard
+Disallow: /ungdomsskole/dashboard
+Disallow: /modul/
+Disallow: /leksjon/
+Disallow: /norsk/modul/
+Disallow: /norsk/leksjon/
+Disallow: /ungdomsskole/modul/
+Disallow: /ungdomsskole/leksjon/
+Disallow: /profil
+Disallow: /admin
+Disallow: /ressurser
+Disallow: /betaling/suksess
+
+Sitemap: https://skrivakademisk.no/sitemap.xml

@@ -6,6 +6,7 @@ export interface Lesson {
   durationMinutes: number;
   videoUrl: string;
   resourceUrl?: string;
+  learningGoals: string[];
   sortOrder: number;
 }
 
@@ -14,6 +15,7 @@ export interface Module {
   title: string;
   description: string;
   icon: string;
+  color: string;
   sortOrder: number;
   lessons: Lesson[];
 }
@@ -23,5 +25,7 @@ export interface Profile {
   fullName: string;
   email: string;
   hasPaidAccess: boolean;
+  hasNorskAccess: boolean;
+  hasUngdomsskoleAccess: boolean;
   isAdmin: boolean;
 }

@@ -1,24 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400;1,14..32,500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design tokens ─────────────────────────────────────────────────────── */
+
 :root {
-  font-family: 'DM Sans', sans-serif;
-  color: #173039;
-  background-color: #faf7f2;
+  /* Dark mode — default */
+  --c-primary:       124 92 252;   /* #7C5CFC — lilla */
+  --c-accent:        255 107 107;  /* #FF6B6B — korall */
+  --c-bg:            15 15 20;     /* #0F0F14 — natt */
+  --c-surface:       26 26 36;     /* #1A1A24 — kort */
+  --c-surface-raised: 34 34 58;   /* #22223A — hevet flate */
+  --c-text:          232 232 237;  /* #E8E8ED — lys tekst */
+  --c-muted:         136 136 160;  /* #8888A0 — dempet */
+  --c-border:        42 42 58;     /* #2A2A3A — kantlinje */
+  --c-success:       74 222 128;   /* #4ADE80 — grønn */
+
+  --background: 240 10% 6%;
+  --foreground: 240 5% 92%;
+  --card: 240 10% 10%;
+  --card-foreground: 240 5% 92%;
+  --popover: 240 10% 10%;
+  --popover-foreground: 240 5% 92%;
+  --primary: 255 61% 67%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 10% 15%;
+  --secondary-foreground: 240 5% 75%;
+  --muted: 240 10% 15%;
+  --muted-foreground: 240 5% 55%;
+  --accent: 0 100% 71%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 10% 18%;
+  --input: 240 10% 18%;
+  --ring: 255 61% 67%;
+  --radius: 0.75rem;
+}
+
+html.light {
+  /* Light mode */
+  --c-primary:        107 70 255;  /* #6B46FF */
+  --c-accent:         240 85 85;   /* #F05555 */
+  --c-bg:             248 248 252; /* #F8F8FC */
+  --c-surface:        255 255 255; /* #FFFFFF */
+  --c-surface-raised: 240 240 248; /* #F0F0F8 */
+  --c-text:           33 33 48;    /* #212130 */
+  --c-muted:          107 107 128; /* #6B6B80 */
+  --c-border:         229 229 237; /* #E5E5ED */
+  --c-success:        34 197 94;   /* #22C55E */
+
+  --background: 240 20% 99%;
+  --foreground: 240 15% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 15% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 15% 10%;
+  --primary: 252 61% 63%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 10% 95%;
+  --secondary-foreground: 240 15% 20%;
+  --muted: 240 5% 93%;
+  --muted-foreground: 240 5% 45%;
+  --accent: 0 84% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 10% 90%;
+  --input: 240 10% 90%;
+  --ring: 252 61% 63%;
+}
+
+/* ── Base styles ────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top right, rgba(224, 122, 95, 0.15), transparent 40%), #faf7f2;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: rgb(var(--c-bg));
+  color: rgb(var(--c-text));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Fraunces', serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgb(var(--c-text));
+}
+
+h1 em, h2 em, h3 em {
+  font-style: italic;
+  color: rgb(var(--c-accent));
+  font-weight: 700;
+}
+
+.accent-italic {
+  font-style: italic;
+  color: rgb(var(--c-accent));
+}
+
+::selection {
+  background: rgb(var(--c-primary) / 0.25);
+  color: rgb(var(--c-text));
+}
+
+/* ── Dark mode: remap bg-white and common light surfaces ────────────────── */
+
+html:not(.light) .bg-white {
+  background-color: rgb(var(--c-surface));
+}
+
+html:not(.light) .bg-brand-cream {
+  background-color: rgb(var(--c-bg));
+}
+
+/* ── Light mode: shadows back to soft ──────────────────────────────────── */
+
+html.light .shadow-soft {
+  box-shadow: 0 4px 24px -2px rgba(107, 70, 255, 0.08);
+}
+
+html.light .shadow-card {
+  box-shadow: 0 1px 3px rgba(107,70,255,0.06), 0 8px 24px -4px rgba(107,70,255,0.08);
+}
+
+html.light .shadow-hover {
+  box-shadow: 0 4px 20px rgba(107,70,255,0.14);
 }
