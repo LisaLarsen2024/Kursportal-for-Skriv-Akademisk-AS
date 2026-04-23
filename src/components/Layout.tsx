@@ -271,10 +271,10 @@ const Layout = () => {
                 </span>
               </div>
               <p className="text-xs text-brand-gray leading-relaxed">
-                Norges ledende kurs i akademisk skriving og norskeksamen — laget for studenter som vil levere sitt beste.
+                Videokurs i akademisk skriving og norskeksamen — enkelt forklart, slik at du forstår det som faktisk teller.
               </p>
               <p className="text-xs text-brand-gray/60">
-                🌍 Tilgjengelig på 13 språk
+                🌍 Skriveappen er tilgjengelig på 13 språk
               </p>
             </div>
 

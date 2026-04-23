@@ -19,7 +19,7 @@ export const norskModules: Module[] = [
         title: 'Hva møter du på eksamen — og hva kreves av deg?',
         description: 'Forberedelsesdag, skrivedag, de fire sjangrene og vurderingskriteriene — alt du trenger å vite før du begynner å øve.',
         durationMinutes: 16,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/daa1dc49-8a60-451c-bfa0-0021f4392069',
+        videoUrl: 'PLACEHOLDER',
         resourceUrl: '',
         learningGoals: [
           'Forstå eksamensformatet: forberedelsesdag med alle hjelpemidler og fem timers skrivedag',
@@ -48,7 +48,7 @@ export const norskModules: Module[] = [
         title: 'Essay, tolkning, retorisk analyse og artikkel — slik skriver du dem',
         description: 'Fire sjangre, fire oppskrifter. Du lærer kjennetegn, struktur og hva som konkret skiller en treer fra en sekser i hver sjanger.',
         durationMinutes: 21,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/6e71f379-9e88-480c-bf90-1314edeb7bb9',
+        videoUrl: 'PLACEHOLDER',
         resourceUrl: '',
         learningGoals: [
           'Skrive et essay med de fem kjennetegnene: utforskende, reflekterende, personlig stemme, tekstbasert og åpen avslutning',
@@ -79,7 +79,7 @@ export const norskModules: Module[] = [
         title: 'Analyser skjønnlitteratur, litteraturhistorie og sammensatte tekster',
         description: 'Analysetrappen fra observasjon til kontekstualisering, de fire litterære sjangrene, realisme og modernisme, og multimodale tekster.',
         durationMinutes: 18,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/4bd4fbbf-34cf-4824-9a85-d3f6317aac3c',
+        videoUrl: 'PLACEHOLDER',
         resourceUrl: '',
         learningGoals: [
           'Analysere de fire litterære sjangrene: novelle, roman, lyrikk og drama',
@@ -110,7 +110,7 @@ export const norskModules: Module[] = [
         title: 'Nynorsk, språkendring og rettskriving',
         description: 'De 10 vanligste nynorskfeilene, en fire-ukers sidemålsstrategi, språk og identitet, og kvalitetssjekken som gjør teksten bedre.',
         durationMinutes: 11,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/ca38a711-1455-4e56-a57e-a52ee2f2b892',
+        videoUrl: 'PLACEHOLDER',
         resourceUrl: '',
         learningGoals: [
           'Identifisere og unngå de ti vanligste nynorskfeilene (pronomen, verb, substantiv og småord)',
@@ -139,7 +139,7 @@ export const norskModules: Module[] = [
         title: 'Fra forberedelsesdag til ferdig tekst — time for time',
         description: 'Tidsskjema for forberedelsesdagen, tekstkartet, oppgavevalg-strategi, skrivedagens fem timer og den sju-stegs kvalitetssjekken.',
         durationMinutes: 12,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/5c14d51c-aefc-45c7-b1a2-5714a9f0eaa9',
+        videoUrl: 'PLACEHOLDER',
         resourceUrl: '',
         learningGoals: [
           'Bruke forberedelsesdagen strategisk: les to ganger, lag tekstkart, forbered verktøy — ikke ferdig tekst',

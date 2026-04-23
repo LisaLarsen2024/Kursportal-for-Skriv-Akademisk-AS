@@ -626,7 +626,7 @@ const LandingPage = () => {
             <h3 className="text-xl text-brand-teal">Trenger du hjelp mens du skriver?</h3>
             <p className="mt-2 text-sm text-brand-gray leading-relaxed">
               Kombiner kurset med skriveappen — den gir deg konkrete forbedringsforslag i drøfting,
-              metode, struktur og APA 7. Tilgjengelig på 13 språk.
+              metode, struktur og APA 7. Skriveappen er tilgjengelig på 13 språk.
             </p>
           </div>
           <a
