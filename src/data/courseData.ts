@@ -1,8 +1,7 @@
 import type { Module } from '../types/course';
 
-// Erstatt '' med YouTube embed-URL når video er klar
-// Eksempel: 'https://www.youtube.com/embed/VIDEO_ID'
-// Erstatt resourceUrl: '' med lenke til nedlastbar ressurs
+// Videoer hostet på Bunny Stream (Library ID: 643556)
+// Embed-format: https://iframe.mediadelivery.net/embed/643556/{video_guid}
 
 export const modules: Module[] = [
   {
@@ -20,7 +19,7 @@ export const modules: Module[] = [
         title: 'Oversikt over oppgavestrukturen',
         description: 'Hva er de ulike delene, og hvorfor er de viktige?',
         durationMinutes: 9,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/323abb4a-1b60-424a-a1d8-b4c09ecc3049',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/3b1ecd32-79b8-48b2-a01d-28e422aa868e',
         resourceUrl: '',
         learningGoals: [
           'Forstå IMRoD-strukturen og når den brukes',
@@ -36,7 +35,7 @@ export const modules: Module[] = [
         title: 'Innledning & problemstilling',
         description: 'Slik formulerer du en god problemstilling',
         durationMinutes: 7,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/546bf4eb-a899-4c17-a1fc-00ded88b2501',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/0a075b36-58f3-42e7-afb0-ede171a97f67',
         resourceUrl: '01-skriveramme-innledning.docx',
         learningGoals: [
           'Formulere en tydelig og avgrenset problemstilling',
@@ -52,7 +51,7 @@ export const modules: Module[] = [
         title: 'Teorikapittelet',
         description: 'Hvordan velge og presentere teori',
         durationMinutes: 7,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/a5977c8a-6c5a-4f8f-b15f-7ddaf8744eb3',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/91f7684e-00ba-4368-92b6-1344f29c5918',
         resourceUrl: '02-skriveramme-teorikapittel.docx',
         learningGoals: [
           'Velge relevant teori for din problemstilling',
@@ -68,7 +67,7 @@ export const modules: Module[] = [
         title: 'Metodekapittelet',
         description: 'Kvalitativ vs. kvantitativ — hva passer for din oppgave?',
         durationMinutes: 6,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/2ef83397-7f43-465d-8c84-149381fb77ee',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/f8b57957-c642-4ff6-ba57-2efb6088add8',
         resourceUrl: '03-skriveramme-metodekapittel.docx',
         learningGoals: [
           'Velge riktig metode for din problemstilling',
@@ -84,7 +83,7 @@ export const modules: Module[] = [
         title: 'Resultater & analyse',
         description: 'Presentere funn på en ryddig måte',
         durationMinutes: 4,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/b0ee0a67-eded-4061-9eaf-944b0a121d0a',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/445025d3-f38c-45f3-8f83-e233a4630abc',
         resourceUrl: '04-skriveramme-resultater.docx',
         learningGoals: [
           'Presentere funn klart og strukturert',
@@ -100,7 +99,7 @@ export const modules: Module[] = [
         title: 'Drøfting',
         description: 'Slik kobler du teori, metode og funn',
         durationMinutes: 5,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/697a3090-f0c5-4222-84b8-d749aea0086f',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/3feff844-7d06-4fe0-af08-3ef47e890c85',
         resourceUrl: '05-skriveramme-drofting.docx',
         learningGoals: [
           'Argumentere akademisk — ikke bare beskrive',
@@ -116,7 +115,7 @@ export const modules: Module[] = [
         title: 'Konklusjon & veien videre',
         description: 'Avrunding og anbefalinger',
         durationMinutes: 4,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/50eb0d03-d306-453f-80b3-7d30f6144924',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/959d7f73-36b9-4e69-b159-080599f83f00',
         resourceUrl: '06-skriveramme-konklusjon.docx',
         learningGoals: [
           'Skrive en konklusjon som svarer på problemstillingen',
@@ -142,7 +141,7 @@ export const modules: Module[] = [
         title: 'Introduksjon til APA 7',
         description: 'Hvorfor referanser, og hva er nytt i 7. utgave?',
         durationMinutes: 4,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/7d3ff558-6bb5-414b-81b4-7cc731f487ff',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/37d2df47-7275-4463-805f-f945234b345d',
         resourceUrl: '',
         learningGoals: [
           'Forstå hvorfor referanser er obligatorisk i akademisk arbeid',
@@ -158,7 +157,7 @@ export const modules: Module[] = [
         title: 'Kildehenvisning i tekst',
         description: 'Parentesreferanser og narrativreferanser',
         durationMinutes: 6,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/cb098942-4d58-42e1-bda5-b9fc9f0da8b2',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/f63153b9-6fd5-41f5-80d3-761ec891f534',
         resourceUrl: '',
         learningGoals: [
           'Bruke parentesreferanser korrekt: (Forfatter, år)',
@@ -174,7 +173,7 @@ export const modules: Module[] = [
         title: 'Referanselisten',
         description: 'Oppbygging og formatering',
         durationMinutes: 3,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/43bc62c1-7d16-4970-8561-6e23f0f7f9d3',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/c2ec5cf9-ab85-479b-8773-f2984c9a1ce7',
         resourceUrl: '11-apa7-referanseliste-mal.docx',
         learningGoals: [
           'Formatere referanselisten med hengende innrykk',
@@ -190,7 +189,7 @@ export const modules: Module[] = [
         title: 'Bøker, artikler & rapporter',
         description: 'De vanligste kildetypene',
         durationMinutes: 3,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/51d01873-e9b8-42fb-a02b-5ad4a7341994',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/da747f06-3bde-480e-ab66-41acf95e5f38',
         resourceUrl: '10-apa7-hurtigreferanse.docx',
         learningGoals: [
           'Referere til bøker med én og flere forfattere',
@@ -206,7 +205,7 @@ export const modules: Module[] = [
         title: 'Nettkilder & lover',
         description: 'Referere til nettsider, lovdata og offentlige dokumenter',
         durationMinutes: 3,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/ee3640fd-456a-4ea7-a7b5-4eb90168eb33',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/1d887fde-0ecf-48cb-a11c-7cce7fb5cc65',
         resourceUrl: '',
         learningGoals: [
           'Referere til nettsider med og uten forfatter',
@@ -222,7 +221,7 @@ export const modules: Module[] = [
         title: 'Vanlige feil & tips',
         description: 'Feilene alle gjør — og hvordan unngå dem',
         durationMinutes: 6,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/68823d03-9189-4c7f-bc13-3bb1d3aeb4ff',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/fc02092c-4691-452c-90c5-55924dd06f72',
         resourceUrl: '',
         learningGoals: [
           'Gjenkjenne de 10 vanligste APA-feilene',
@@ -248,7 +247,7 @@ export const modules: Module[] = [
         title: 'Hva er akademisk språk?',
         description: 'Kjennetegn og prinsipper',
         durationMinutes: 7,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/36a4aa6f-1c27-434a-bbd3-530578cbc835',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/e7f46ed8-e733-4a42-bab1-bbcd34c52981',
         resourceUrl: '',
         learningGoals: [
           'Definere hva som kjennetegner akademisk språk',
@@ -264,7 +263,7 @@ export const modules: Module[] = [
         title: 'Presisjon & objektivitet',
         description: 'Unngå vagt språk og synsing',
         durationMinutes: 5,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/69b99538-61f3-4cc0-860b-102351bb6525',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/f07ac2f6-6d2f-417a-af76-6bcf2ecccf73',
         resourceUrl: '',
         learningGoals: [
           'Erstatte vage ord med presise formuleringer',
@@ -280,7 +279,7 @@ export const modules: Module[] = [
         title: 'Avsnittstruktur',
         description: 'Temasetninger, argumentasjon og flyt',
         durationMinutes: 4,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/7a94044e-f754-4ecf-a867-9af2630462d2',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/46bae321-67aa-4284-844f-de988a3ae553',
         resourceUrl: '',
         learningGoals: [
           'Skrive sterke temasetninger som åpner hvert avsnitt',
@@ -296,7 +295,7 @@ export const modules: Module[] = [
         title: 'Sammenbindingsord & overganger',
         description: 'Slik skaper du rød tråd',
         durationMinutes: 5,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/7b068fdd-3f8b-4d53-af8e-f72e2a7c3742',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/b996e032-c318-46fb-bee5-4dc4bdaf25bb',
         resourceUrl: '12-akademisk-fraseoversikt.docx',
         learningGoals: [
           'Bruke sammenbindingsord som styrker argumentasjonen',
@@ -312,7 +311,7 @@ export const modules: Module[] = [
         title: 'Vanlige språkfeil',
         description: 'Gjennomgang av typiske tabber',
         durationMinutes: 4,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/8d1d656a-4181-489a-aa5b-55293d550cc0',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/95b321ce-87f1-453e-986c-decec6e33ea9',
         resourceUrl: '13-korrektursjekkliste-sprak.docx',
         learningGoals: [
           'Gjenkjenne og rette opp de vanligste grammatikkfeilene',
@@ -338,7 +337,7 @@ export const modules: Module[] = [
         title: 'Planlegging & tidslinje',
         description: 'Lag en realistisk fremdriftsplan',
         durationMinutes: 6,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/46cc08cf-7b16-4e2b-96b5-1c13b28d9a2e',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/a837fd08-aac6-4452-acff-43981163f3ad',
         resourceUrl: '08-planlegger-16-ukers-tidslinje.docx',
         learningGoals: [
           'Lage en realistisk fremdriftsplan med milepæler',
@@ -354,7 +353,7 @@ export const modules: Module[] = [
         title: 'Samarbeid med veileder',
         description: 'Forberedelse til veiledningsmøter',
         durationMinutes: 4,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/f34f53ef-cdcb-4e1b-8c72-2612366758d2',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/b0e684b2-0aa6-497b-ad80-fa9c2029ee2a',
         resourceUrl: '09-mal-veiledermoete.docx',
         learningGoals: [
           'Forberede seg godt til veiledningsøkter',
@@ -370,7 +369,7 @@ export const modules: Module[] = [
         title: 'Tilbakemelding & revisjon',
         description: 'Slik bruker du tilbakemeldinger effektivt',
         durationMinutes: 5,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/1daa7a23-9007-4fb0-8905-ac4dfc0dce84',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/dd4c8843-ca72-4976-b9ce-844e259a1d80',
         resourceUrl: '',
         learningGoals: [
           'Lese og tolke tilbakemeldinger konstruktivt',
@@ -386,7 +385,7 @@ export const modules: Module[] = [
         title: 'Motivasjon & skrivesperre',
         description: 'Tips for å holde flyten oppe',
         durationMinutes: 5,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/e1b01106-20c6-4b9e-ad85-54b9f8433826',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/e6193d78-3ebb-4e94-a9c5-8202c0c1527e',
         resourceUrl: '',
         learningGoals: [
           'Overvinne skrivesperre med konkrete teknikker',
@@ -402,7 +401,7 @@ export const modules: Module[] = [
         title: 'Siste sjekk før innlevering',
         description: 'Sjekkliste for den endelige gjennomgangen',
         durationMinutes: 6,
-        videoUrl: 'https://share.synthesia.io/embeds/videos/660168e8-0ca3-4574-8a34-06b4c2940af8',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/bed54a73-e9dd-45e5-9e26-86e493fed5b8',
         resourceUrl: '07-sjekkliste-siste-sjekk.docx',
         learningGoals: [
           'Bruke en systematisk sjekkliste før innlevering',
