@@ -1,6 +1,7 @@
 import type { Module } from '../types/course';
 
 // Kurs: Norsk eksamen VGS — basert på NOR01-07 (Utdanningsdirektoratet)
+// Videoer hostet på Bunny Stream (Library ID: 643556)
 // Struktur: 5 moduler · 5 videoleksjoner · ca. 78 minutter totalt
 
 export const norskModules: Module[] = [
@@ -19,7 +20,7 @@ export const norskModules: Module[] = [
         title: 'Hva møter du på eksamen — og hva kreves av deg?',
         description: 'Forberedelsesdag, skrivedag, de fire sjangrene og vurderingskriteriene — alt du trenger å vite før du begynner å øve.',
         durationMinutes: 16,
-        videoUrl: 'PLACEHOLDER',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/8170a553-a21e-419b-aa8d-89fc91511971',
         resourceUrl: '',
         learningGoals: [
           'Forstå eksamensformatet: forberedelsesdag med alle hjelpemidler og fem timers skrivedag',
@@ -48,7 +49,7 @@ export const norskModules: Module[] = [
         title: 'Essay, tolkning, retorisk analyse og artikkel — slik skriver du dem',
         description: 'Fire sjangre, fire oppskrifter. Du lærer kjennetegn, struktur og hva som konkret skiller en treer fra en sekser i hver sjanger.',
         durationMinutes: 21,
-        videoUrl: 'PLACEHOLDER',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/6a9b40c2-f577-4287-ab6e-56431249dcce',
         resourceUrl: '',
         learningGoals: [
           'Skrive et essay med de fem kjennetegnene: utforskende, reflekterende, personlig stemme, tekstbasert og åpen avslutning',
@@ -79,7 +80,7 @@ export const norskModules: Module[] = [
         title: 'Analyser skjønnlitteratur, litteraturhistorie og sammensatte tekster',
         description: 'Analysetrappen fra observasjon til kontekstualisering, de fire litterære sjangrene, realisme og modernisme, og multimodale tekster.',
         durationMinutes: 18,
-        videoUrl: 'PLACEHOLDER',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/b52ad895-10e7-4455-86d1-e55b80e347de',
         resourceUrl: '',
         learningGoals: [
           'Analysere de fire litterære sjangrene: novelle, roman, lyrikk og drama',
@@ -110,7 +111,7 @@ export const norskModules: Module[] = [
         title: 'Nynorsk, språkendring og rettskriving',
         description: 'De 10 vanligste nynorskfeilene, en fire-ukers sidemålsstrategi, språk og identitet, og kvalitetssjekken som gjør teksten bedre.',
         durationMinutes: 11,
-        videoUrl: 'PLACEHOLDER',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/bf4be275-fa7a-465e-8e25-41dd91304ec8',
         resourceUrl: '',
         learningGoals: [
           'Identifisere og unngå de ti vanligste nynorskfeilene (pronomen, verb, substantiv og småord)',
@@ -139,7 +140,7 @@ export const norskModules: Module[] = [
         title: 'Fra forberedelsesdag til ferdig tekst — time for time',
         description: 'Tidsskjema for forberedelsesdagen, tekstkartet, oppgavevalg-strategi, skrivedagens fem timer og den sju-stegs kvalitetssjekken.',
         durationMinutes: 12,
-        videoUrl: 'PLACEHOLDER',
+        videoUrl: 'https://iframe.mediadelivery.net/embed/643556/da1e5c20-70ae-414b-b203-f2710d590882',
         resourceUrl: '',
         learningGoals: [
           'Bruke forberedelsesdagen strategisk: les to ganger, lag tekstkart, forbered verktøy — ikke ferdig tekst',
