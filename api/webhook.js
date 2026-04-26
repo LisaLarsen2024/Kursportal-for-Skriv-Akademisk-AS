@@ -163,8 +163,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid signature' });
   }
 
-  res.json({ received: true });
-
   if (event.type === 'checkout.session.completed' || event.type === 'payment_intent.succeeded') {
     const obj = event.data.object;
     const email = obj.customer_details?.email || obj.customer_email || obj.receipt_email || obj.metadata?.email || null;
@@ -175,6 +173,8 @@ export default async function handler(req, res) {
       await grantAccess(email.toLowerCase(), courseId);
     }
   }
+
+  res.json({ received: true });
 }
 
 export const config = {
