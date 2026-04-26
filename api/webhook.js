@@ -6,6 +6,14 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.STRIPE_LI
 const supabase = createClient(process.env.VITE_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+async function readRawBody(req) {
+  const chunks = [];
+  for await (const chunk of req) {
+    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
 function maskEmail(email) {
   if (!email) return '***';
   const [local, domain] = email.split('@');
@@ -141,17 +149,18 @@ export default async function handler(req, res) {
   const sig = req.headers['stripe-signature'];
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-  let event;
-
-  if (webhookSecret && sig) {
-    try {
-      event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
-    } catch (err) {
-      console.error('Webhook signature verification failed:', err.message);
-      return res.status(400).json({ error: 'Invalid signature' });
-    }
-  } else {
+  if (!webhookSecret || !sig) {
     return res.status(400).json({ error: 'Missing signature or webhook secret' });
+  }
+
+  const rawBody = await readRawBody(req);
+
+  let event;
+  try {
+    event = stripe.webhooks.constructEvent(rawBody, sig, webhookSecret);
+  } catch (err) {
+    console.error('Webhook signature verification failed:', err.message);
+    return res.status(400).json({ error: 'Invalid signature' });
   }
 
   res.json({ received: true });

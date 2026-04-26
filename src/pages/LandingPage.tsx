@@ -17,10 +17,12 @@ import {
   Laptop,
 } from 'lucide-react';
 import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { modules as courseModules } from '../data/courseData';
 import { motion } from 'framer-motion';
 import heroStudent from '@/assets/hero-student.svg';
+import { useAuth } from '../contexts/AuthContext';
+import { startCheckout } from '../lib/checkout';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -73,8 +75,8 @@ const courses = [
     priceNote: 'Engangsbetaling · Tilgang for alltid',
     stats: ['5 videoleksjoner', '5 moduler', 'Basert på NOR01-07'],
     cta: 'Kjøp tilgang',
-    ctaHref: 'https://buy.stripe.com/4gM5kw4uVg1z2nx1ZhbbG03',
-    external: true,
+    ctaHref: '',
+    external: false,
     available: true,
   },
   {
@@ -147,7 +149,24 @@ function useUrgencyBanner() {
 
 const LandingPage = () => {
   const [expandedModule, setExpandedModule] = useState<string | null>(null);
+  const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
   const urgency = useUrgencyBanner();
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleCheckout = async (courseId: 'akademisk' | 'norsk-vg3') => {
+    if (!user) {
+      navigate('/innlogging?redirect=/');
+      return;
+    }
+    setCheckoutLoading(courseId);
+    try {
+      await startCheckout(courseId, user.email ?? undefined);
+    } catch (err) {
+      console.error('Checkout failed:', err);
+      setCheckoutLoading(null);
+    }
+  };
 
   return (
     <div className="space-y-0">
@@ -412,19 +431,16 @@ const LandingPage = () => {
                     <span className="ml-2 text-xs text-brand-gray">{course.priceNote}</span>
                   </p>
                 )}
-                {course.external ? (
-                  <a
-                    href={course.ctaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition ${
-                      course.available
-                        ? 'bg-brand-coral text-white hover:opacity-90 shadow-sm'
-                        : 'bg-brand-teal/10 text-brand-teal hover:bg-brand-teal/15'
-                    }`}
+                {course.id === 'norsk-vg3' ? (
+                  <button
+                    type="button"
+                    onClick={() => handleCheckout('norsk-vg3')}
+                    disabled={checkoutLoading === 'norsk-vg3'}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-coral px-5 py-3 text-sm font-semibold text-white hover:opacity-90 shadow-sm transition disabled:opacity-60 disabled:cursor-wait"
                   >
-                    {course.cta} <ChevronRight size={15} />
-                  </a>
+                    {checkoutLoading === 'norsk-vg3' ? 'Sender deg til betaling…' : course.cta}
+                    {checkoutLoading !== 'norsk-vg3' && <ChevronRight size={15} />}
+                  </button>
                 ) : (
                   <Link
                     to={course.ctaHref}
@@ -686,14 +702,15 @@ const LandingPage = () => {
                 Akademisk skriving — 1 990 kr
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
-              <a
-                href="https://buy.stripe.com/4gM5kw4uVg1z2nx1ZhbbG03"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-border px-8 py-4 font-semibold text-brand-teal transition hover:border-brand-teal/30 hover:bg-brand-teal/5"
+              <button
+                type="button"
+                onClick={() => handleCheckout('norsk-vg3')}
+                disabled={checkoutLoading === 'norsk-vg3'}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-border px-8 py-4 font-semibold text-brand-teal transition hover:border-brand-teal/30 hover:bg-brand-teal/5 disabled:opacity-60 disabled:cursor-wait"
               >
-                Norsk VGS — 549 kr <ArrowRight size={16} />
-              </a>
+                {checkoutLoading === 'norsk-vg3' ? 'Sender deg til betaling…' : 'Norsk VGS — 549 kr'}
+                {checkoutLoading !== 'norsk-vg3' && <ArrowRight size={16} />}
+              </button>
             </div>
           </motion.div>
         </div>
@@ -735,15 +752,17 @@ const LandingPage = () => {
               Start med akademisk skriving
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <a
-              href="https://buy.stripe.com/4gM5kw4uVg1z2nx1ZhbbG03"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border-2 border-white/25 px-8 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+            <button
+              type="button"
+              onClick={() => handleCheckout('norsk-vg3')}
+              disabled={checkoutLoading === 'norsk-vg3'}
+              className="group inline-flex items-center gap-2 rounded-full border-2 border-white/25 px-8 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/5 disabled:opacity-60 disabled:cursor-wait"
             >
-              Norsk VGS — 549 kr
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
+              {checkoutLoading === 'norsk-vg3' ? 'Sender deg til betaling…' : 'Norsk VGS — 549 kr'}
+              {checkoutLoading !== 'norsk-vg3' && (
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              )}
+            </button>
           </motion.div>
         </div>
       </motion.section>

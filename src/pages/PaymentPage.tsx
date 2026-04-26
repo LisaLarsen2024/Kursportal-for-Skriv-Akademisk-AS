@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { CheckCircle2, Lock, Mail, Star, ArrowRight, Clock, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { Navigate, useNavigate } from 'react-router-dom';
-
-const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/cNi5kw6D39DbbY7bzRbbG02';
+import { startCheckout } from '../lib/checkout';
 
 const included = [
   '23 videoleksjoner i 4 moduler',
@@ -67,19 +67,26 @@ const stagger = { visible: { transition: { staggerChildren: 0.07 } } };
 const PaymentPage = () => {
   const { user, profile } = useAuth();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   if (profile?.hasPaidAccess) {
     return <Navigate to="/dashboard" replace />;
   }
 
-  const stripeUrl = user?.email
-    ? `${STRIPE_PAYMENT_LINK}?prefilled_email=${encodeURIComponent(user.email)}`
-    : STRIPE_PAYMENT_LINK;
-
-  const handleBuyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleBuyClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     if (!user) {
-      e.preventDefault();
       navigate('/innlogging?redirect=/betaling');
+      return;
+    }
+    setError(null);
+    setLoading(true);
+    try {
+      await startCheckout('akademisk', user.email ?? undefined);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Noe gikk galt');
+      setLoading(false);
     }
   };
 
@@ -184,14 +191,19 @@ const PaymentPage = () => {
             ))}
           </ul>
 
-          <a
-            href={stripeUrl}
+          <button
+            type="button"
             onClick={handleBuyClick}
-            className="relative group flex items-center justify-center gap-2 rounded-2xl bg-brand-coral px-6 py-4 font-bold text-white text-lg shadow-lg shadow-brand-coral/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            disabled={loading}
+            className="relative group flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-coral px-6 py-4 font-bold text-white text-lg shadow-lg shadow-brand-coral/30 transition-all hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-60 disabled:cursor-wait"
           >
-            Kjøp tilgang — 1 990 kr
-            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-          </a>
+            {loading ? 'Sender deg til betaling…' : 'Kjøp tilgang — 1 990 kr'}
+            {!loading && <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />}
+          </button>
+
+          {error && (
+            <p className="relative text-center text-xs text-red-200">{error}</p>
+          )}
 
           <p className="relative text-center text-xs text-white/50 italic leading-relaxed">
             Billigere enn én veiledningstime. Og du kan se leksjonene igjen og igjen.
@@ -263,14 +275,15 @@ const PaymentPage = () => {
         <div className="relative space-y-4">
           <h2 className="text-3xl text-white">Klar til å skrive en oppgave du er stolt av?</h2>
           <p className="text-white/75">Én betaling. Tilgang for alltid. Start i dag.</p>
-          <a
-            href={stripeUrl}
+          <button
+            type="button"
             onClick={handleBuyClick}
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-brand-coral text-lg shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            disabled={loading}
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-brand-coral text-lg shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-60 disabled:cursor-wait"
           >
-            Kjøp tilgang — 1 990 kr
-            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-          </a>
+            {loading ? 'Sender deg til betaling…' : 'Kjøp tilgang — 1 990 kr'}
+            {!loading && <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />}
+          </button>
         </div>
       </motion.section>
 
