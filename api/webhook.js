@@ -119,11 +119,15 @@ async function sendWelcomeEmail(email, fullName, courseId = 'akademisk') {
 }
 
 async function grantAccess(email, courseId = 'akademisk') {
-  const { data, error } = await supabase.auth.admin.listUsers();
+  const { data, error } = await supabase.auth.admin.listUsers({ perPage: 1000 });
   if (error) { console.error('Kunne ikke hente brukerliste:', error.message); return; }
 
+  console.log(`listUsers returnerte ${data.users?.length ?? 0} brukere, leter etter ${maskEmail(email)}`);
   const match = data.users.find(u => u.email?.toLowerCase() === email);
-  if (!match) { console.warn(`Ingen bruker funnet for: ${maskEmail(email)}`); return; }
+  if (!match) {
+    console.warn(`Ingen bruker funnet for: ${maskEmail(email)}. Eksisterende: ${data.users.map(u => maskEmail(u.email)).join(', ')}`);
+    return;
+  }
 
   const { error: accessErr } = await supabase
     .from('course_access')
