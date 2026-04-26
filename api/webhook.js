@@ -119,6 +119,9 @@ async function sendWelcomeEmail(email, fullName, courseId = 'akademisk') {
 }
 
 async function grantAccess(email, courseId = 'akademisk') {
+  const url = process.env.VITE_SUPABASE_URL || '';
+  const keyPrefix = (process.env.SUPABASE_SERVICE_ROLE_KEY || '').slice(0, 20);
+  console.log(`Supabase URL: ${url} | key starter med: ${keyPrefix}...`);
   const { data, error } = await supabase.auth.admin.listUsers({ perPage: 1000 });
   if (error) { console.error('Kunne ikke hente brukerliste:', error.message); return; }
 
