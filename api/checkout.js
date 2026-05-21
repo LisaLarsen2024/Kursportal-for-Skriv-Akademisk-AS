@@ -42,7 +42,7 @@ export default async function handler(req, res) {
       success_url: `${SITE_URL}/betaling/suksess?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE_URL}/betaling`,
       locale: 'nb',
-      allow_promotion_codes: false,
+      allow_promotion_codes: true,
     });
 
     return res.status(200).json({ url: session.url });
