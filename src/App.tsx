@@ -8,6 +8,7 @@ import AuthPage from './pages/AuthPage';
 import DashboardPage from './pages/DashboardPage';
 import LandingPage from './pages/LandingPage';
 import LessonPage from './pages/LessonPage';
+import MaintenancePage from './pages/MaintenancePage';
 import ModulePage from './pages/ModulePage';
 import NorskDashboardPage from './pages/NorskDashboardPage';
 import PaymentPage from './pages/PaymentPage';
@@ -18,6 +19,9 @@ import ResourcesPage from './pages/ResourcesPage';
 import UngdomskoleDashboardPage from './pages/UngdomskoleDashboardPage';
 import UngdomskoleLandingPage from './pages/UngdomskoleLandingPage';
 import VilkarPage from './pages/VilkarPage';
+
+// Flip til false når kursportalen er klar igjen (planlagt 15. august 2026)
+const MAINTENANCE_MODE = true;
 
 const queryClient = new QueryClient();
 
@@ -149,14 +153,20 @@ const AppRoutes = () => {
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <ProgressProvider>
-        <AppRoutes />
-      </ProgressProvider>
-    </AuthProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  if (MAINTENANCE_MODE) {
+    return <MaintenancePage />;
+  }
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <ProgressProvider>
+          <AppRoutes />
+        </ProgressProvider>
+      </AuthProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
